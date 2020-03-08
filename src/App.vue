@@ -11,8 +11,6 @@ export default {
   name: 'App',
   components: {
   },
-  data () {
-  },
   mounted (){
   }
 }
