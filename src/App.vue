@@ -7,10 +7,15 @@
 <script>
 // import jsonp from 'jsonp'
 // import axios from 'axios'
-import storage from './storage/index.js'
+// import storage from './storage/index.js'
 export default {
   name: 'App',
   components: {
+  },
+  data () {
+    return {
+      res: {}
+    }
   },
   mounted (){
     //storage.setItem('a',1);
@@ -18,7 +23,11 @@ export default {
     //storage.setItem('abc',{a:1},'user');
     //storage.setItem('abc',{a:1},'user');
     //storage.clear('a');
-    storage.clear("a","user");
+    //storage.clear("a","user");
+    //本地加载请求静态json文件的形式
+    this.axios.get('/mock/user/login.json').then((res)=>{
+      this.res = res
+    })
   }
 }
 </script>
